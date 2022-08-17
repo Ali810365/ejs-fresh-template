@@ -1,0 +1,139 @@
+    @import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family:  'Mali', cursive, monospace, sans-serif;
+}
+
+.wrapper{
+    height: 100vh;
+    background-color: rgb(236, 241, 243);
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+
+
+}
+
+.nav{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    overflow: hidden;
+    
+}
+
+.nav-items{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-items a{
+    text-decoration: none;
+    color: black;
+    margin: 15px;
+}
+
+.main-content{
+    width: 100%;
+    height: 90vh;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left{
+    width: 30%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-container{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+}
+
+.image-container img{
+    max-width: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(201, 198, 198);
+}
+
+.about{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(201, 198, 198);
+    width: 100%;
+    height: 45vh;
+    border-radius: 10px;
+}
+
+.about p{
+    margin: 10px 10px;
+    font-size: 20px;
+}
+
+.about h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.right{
+    width: 60%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.sections{
+    width: 48%;
+    height: 43vh;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(235, 225, 230);
+}
+
+.card{
+    background-color: rgb(255, 255, 255);
+    
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header{
+    background-color: rgb(243, 239, 239);
+    width: 90%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgb(201, 198, 198);
+}
+
+.details{
+    background-color: rgb(243, 239, 239);
+    width: 90%;
+    height: 35vh;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(201, 198, 198);
+}
+
+.details p{
+    margin: 5px 5px;
+}
