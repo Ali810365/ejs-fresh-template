@@ -57,6 +57,38 @@ app.get('/ciara', (req, res) => {
   });
 })
 
+app.get('/rock', (req, res) => {
+  //res.send('Ola from Express!')
+  var name = 'The Rock'
+  var headingOne = 'Early life and Education'
+  var headingTwo = 'Personal Life'
+  var headingThree = 'Professional Wrestling'
+  var headingFour = 'Acting Career'
+  res.render('pages/rock', {
+    'name':name,
+    'headingOne': headingOne,
+    'headingTwo': headingTwo,
+    'headingThree': headingThree,
+    'headingFour': headingFour
+  });
+})
+
+app.get('/ed', (req, res) => {
+  //res.send('Ola from Express!')
+  var name = 'Ed'
+  var headingOne = 'Early life and Education'
+  var headingTwo = 'Personal Life'
+  var headingThree = 'Musical Style'
+  var headingFour = 'Influences'
+  res.render('pages/ed', {
+    'name':name,
+    'headingOne': headingOne,
+    'headingTwo': headingTwo,
+    'headingThree': headingThree,
+    'headingFour': headingFour
+  });
+})
+
 
 
 
