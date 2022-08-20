@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+var data = require('./data/test.json');
 
 app.set('view engine', 'ejs')
 
@@ -9,90 +10,38 @@ app.use(express.static(__dirname));
 
 
 app.get('/', (req, res) => {
-  //res.send('Ola from Express!')
-  var name = 'Adele'
-  var headingOne = 'Early life and Education'
-  var headingTwo = 'Career Debut'
-  var headingThree = 'Personal life'
-  var headingFour = 'Musical style'
+  var title = "My Users Page";
+  var heading = "My Website"
   
   res.render('pages/index', {
-    'name':name,
-    'headingOne': headingOne,
-    'headingTwo': headingTwo,
-    'headingThree': headingThree,
-    'headingFour': headingFour
-  });
+    'title': title,
+    'heading': heading
+  })
 })
 
-app.get('/wilson', (req, res) => {
-  //res.send('Ola from Express!')
-  var name = 'Russell'
-  var headingOne = 'Early life and Education'
-  var headingTwo = 'College Football Career'
-  var headingThree = 'NFL Career'
-  var headingFour = 'Charitable work'
-  res.render('pages/wilson', {
-    'name':name,
-    'headingOne': headingOne,
-    'headingTwo': headingTwo,
-    'headingThree': headingThree,
-    'headingFour': headingFour
-  });
+app.get('/users', (req, res) => {
+  var title = "My Users Page";
+  var heading = "My Website"
+  res.render('users/index', {
+    'title': title,
+    'heading': heading,
+    'users': data
+  })
 })
 
-app.get('/ciara', (req, res) => {
-  //res.send('Ola from Express!')
-  var name = 'Ciara'
-  var headingOne = 'Early life and Education'
-  var headingTwo = 'Personal Life'
-  var headingThree = 'Vocals and Musical Style'
-  var headingFour = 'Influences'
-  res.render('pages/ciara', {
-    'name':name,
-    'headingOne': headingOne,
-    'headingTwo': headingTwo,
-    'headingThree': headingThree,
-    'headingFour': headingFour
-  });
-})
-
-app.get('/rock', (req, res) => {
-  //res.send('Ola from Express!')
-  var name = 'The Rock'
-  var headingOne = 'Early life and Education'
-  var headingTwo = 'Personal Life'
-  var headingThree = 'Professional Wrestling'
-  var headingFour = 'Acting Career'
-  res.render('pages/rock', {
-    'name':name,
-    'headingOne': headingOne,
-    'headingTwo': headingTwo,
-    'headingThree': headingThree,
-    'headingFour': headingFour
-  });
-})
-
-app.get('/ed', (req, res) => {
-  //res.send('Ola from Express!')
-  var name = 'Ed'
-  var headingOne = 'Early life and Education'
-  var headingTwo = 'Personal Life'
-  var headingThree = 'Musical Style'
-  var headingFour = 'Influences'
-  res.render('pages/ed', {
-    'name':name,
-    'headingOne': headingOne,
-    'headingTwo': headingTwo,
-    'headingThree': headingThree,
-    'headingFour': headingFour
-  });
-})
-
-
+//add user/view route - we are cheating by using the array index - 1
+app.get('/users/view/:id', function(req, res) {
+ var title = 'User Page';
+ var id = req.params.id;
+ res.render('users/view', {
+     title: title,
+     user: data[--id]
+ });
+});
 
 
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+  console.log(data)
 })
